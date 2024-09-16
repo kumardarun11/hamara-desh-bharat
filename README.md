@@ -68,6 +68,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **TEAM CODE_CRAZERS**
 
 If you have any suggestions, feel free to contribute or open an issue.
+You can give your valuable feedback [here](https://docs.google.com/forms/d/1YOFRGJbMOmrM2jIECULnypCMyMf8LpauKL_-OE4woe8/edit?ts=66e83577).
 
 ---
 
