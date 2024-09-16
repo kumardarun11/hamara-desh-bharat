@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Hamara Desh Bharat</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./styles/index.css" />
+ <!-- Accessibility Tool Icon -->
+<div id="accessibilityIcon" onclick="toggleAccessibilityMenu()">
+  <i class="fas fa-universal-access"></i> <!-- FAFA icon -->
+</div>
+
+<!-- Accessibility Options Menu -->
+<div id="accessibilityMenu">
+  <button onclick="zoomIn()">A+</button>
+  <button onclick="zoomOut()">A-</button>
+  <button onclick="toggleBlackWhite()">Black & White</button>
+  <button onclick="resetAccessibility()">Reset</button>
+</div>
+
+<!-- Page Content (Wrap the rest of your page content here) -->
+<div id="pageContent">
+  <!-- Your page content goes here -->
+</div>
+
+<style>
+/* Accessibility Icon */
+#accessibilityIcon {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  background: #06541a;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  filter: none; /* Ensure filter doesn't affect this */
+}
+
+#accessibilityIcon:hover {
+  transform: scale(1.1) translateY(-50%);
+}
+
+/* Accessibility Menu */
+#accessibilityMenu {
+  position: fixed;
+  left: calc(20px + 70px); /* Position next to the icon */
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  padding: 10px;
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  filter: none; /* Ensure filter doesn't affect this */
+}
+
+#accessibilityMenu button {
+  display: block;
+  background-color: #06541a;
+  color: white;
+  margin: 5px 0;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+#accessibilityMenu button:hover {
+  background-color: #088d2a;
+}
+
+#pageContent {
+  filter: none; /* This will be toggled by JS for grayscale */
+}
+
+html {
+  zoom: 1; /* Default zoom */
+}
+</style>
+
+<script>
+let fontSize = 100; // Default percentage for page size
+let isBlackWhite = false;
+
+function toggleAccessibilityMenu() {
+  const menu = document.getElementById('accessibilityMenu');
+  menu.style.display = menu.style.display === 'none' || menu.style.display === '' ? 'flex' : 'none';
+}
+
+function zoomIn() {
+  fontSize += 10;
+  document.documentElement.style.zoom = fontSize / 100; // Scale the entire page
+}
+
+function zoomOut() {
+  if (fontSize > 50) {
+    fontSize -= 10;
+    document.documentElement.style.zoom = fontSize / 100;
+  }
+}
+
+function toggleBlackWhite() {
+  isBlackWhite = !isBlackWhite;
+  const pageContent = document.getElementById('pageContent');
+  document.body.style.filter = isBlackWhite ? 'grayscale(100%)' : 'none'; // Apply filter only to the body, keeping icon/menu unaffected
+}
+
+function resetAccessibility() {
+  fontSize = 100;
+  isBlackWhite = false;
+  document.documentElement.style.zoom = '1';
+  document.body.style.filter = 'none'; // Reset filter on the entire page
+}
+</script>
+
+
+  </head>
+
+
+
+  <body class="no_scroll_bar">
+    <!-- HTML for Animated Chatbot Icon with Font Awesome -->
+<a href="./pages/chatbot.html" target="_self" id="chatbotIcon">
+  <div class="chatbot-icon">
+    <div class="chatbot-inner">
+      <i class="fas fa-comment"></i> <!-- FAFA icon instead of image -->
+    </div>
+    <div class="notification-dot"></div> <!-- Optional notification dot -->
+  </div>
+</a>
+
+<!-- CSS for Fixed and Animated Design with FAFA Icon -->
+<style>
+  /* Icon Wrapper */
+  #chatbotIcon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    animation: float 3s infinite; /* Subtle floating effect */
+  }
+
+  /* Chatbot Icon */
+  .chatbot-icon {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #42a5f5, #478ed1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Font Awesome Icon Styling */
+  .chatbot-inner i {
+    font-size: 28px; /* Adjust size of FAFA icon */
+    color: white; /* Icon color */
+  }
+
+  /* Hover Effect */
+  #chatbotIcon:hover {
+    transform: scale(1.2);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Notification Dot (Optional) */
+  .notification-dot {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 12px;
+    height: 12px;
+    background-color: #ff5252;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(255, 82, 82, 0.6);
+    animation: bounce 2s infinite; /* Bouncing effect */
+  }
+
+  /* Animations */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px); /* Creates a floating effect */
+    }
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+</style>
+
+<!-- Optional JavaScript for Scroll Animation and Dynamic Attention -->
+<script>
+  window.addEventListener('scroll', function() {
+    var chatbot = document.getElementById('chatbotIcon');
+    if (window.scrollY > 200) {
+      chatbot.style.transform = 'scale(1.05)';
+    } else {
+      chatbot.style.transform = 'scale(1)';
+    }
+  });
+
+  // Additional interaction for notification dot or chatbot icon pop-in (if needed)
+  setTimeout(function() {
+    document.querySelector('.notification-dot').style.display = 'block';
+  }, 3000);
+</script>
+
+    
+      <!-- Background video element -->
+      <video autoplay muted loop id="background-video">
+        <source src="bgvideo1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    
+      <!-- Rest of your content -->
+    
+    <!-- Audio element for background music -->
+    <audio id="background-music" src="./music/covermusic.mp3" autoplay loop></audio>
+
+    <div class="preloader_container" id="preloader_container">
+      <div class="loader" id="loader">
+        <ul class="preloader">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <h3>
+          Loading <span id="dot1">.</span><span id="dot2">.</span><span id="dot3">.</span>
+        </h3>
+      </div>
+    </div>
+    
+    <div class="container1">
+      <section>
+        <!-- Navigation Bar -->
+        <div class="navbar-section">
+          <div class="dropdown">
+            <button class="dropbtn">States and UTs</button>
+            <div class="dropdown-content">
+              <a href="./pages/state.html">States</a>
+              <a href="./pages/ut.html">UTs</a>
+            </div>
+          </div>
+          <div class="foods">
+            <a href="./pages/foods.html">Foods</a>
+          </div>
+          <div class="gallery">
+            <a href="./pages/gallery.html">Gallery</a>
+          </div>
+          <div class="signin">
+            <a href="./pages/signin.html" id="signin_button">Sign In</a>
+          </div>
+          <div class="user">
+            <a href="dashboard.php"><i class="fa-solid fa-circle-user"></i></a>
+          </div>
+
+          <!-- Hamburger Menu -->
+          <div class="dropdown">
+            <button class="dropbtn"><i class="fa-solid fa-bars"></i></button>
+            <div class="dropdown-content">
+              <a href="./pages/travel.html">Travel With Us</a>
+              
+
+              <!-- First Sub Dropdown -->
+              <div class="dropdown">
+                <a href="#" class="dropdown-toggle" onclick="toggleSubDropdown('sub-dropdown-1')">General Information</a>
+                <div id="sub-dropdown-1" class="sub-dropdown-content">
+                  <a href="https://presidentofindia.nic.in/">President of India</a>
+                  <a href="https://vicepresidentofindia.nic.in/">Vice-President of India</a>
+                  <a href="https://www.pmindia.gov.in/">Prime Minister of India</a>
+                  <a href="https://cds.gov.in/">Chief of Defence Staff</a>
+                  <a href="https://www.indianarmy.nic.in/">Chiefs of Army Staff</a>
+                  <a href="https://www.indiannavy.nic.in/">Chief of Naval Staff</a>
+                  <a href="https://indianairforce.nic.in/">Chief of Air Staff</a>
+                  <a href="https://www.sci.gov.in/chief-justice-judges/">Chief Justice & Judges</a>
+                  <a href="https://eci.gov.in/">Chief Election Commissioner of India</a>
+                  <a href="https://www.upsc.gov.in/">Chairman & Members of UPSC</a>
+                </div>
+              </div>
+
+              <!-- Second Sub Dropdown -->
+              <div class="dropdown">
+                <a href="#" class="dropdown-toggle" onclick="toggleSubDropdown('sub-dropdown-2')">National Identity Elements</a>
+                <div id="sub-dropdown-2" class="sub-dropdown-content">
+                  <a href="https://en.wikipedia.org/wiki/Flag_of_India">National Flag</a>
+                  <a href="https://en.wikipedia.org/wiki/Indian_peafowl">National Bird</a>
+                  <a href="https://en.wikipedia.org/wiki/Jana_Gana_Mana">National Anthem</a>
+                  <a href="https://en.wikipedia.org/wiki/State_Emblem_of_India">State Emblem</a>
+                  <a href="https://en.wikipedia.org/wiki/Indian_calendar">National Calendar</a>
+                  <a href="https://en.wikipedia.org/wiki/Bengal_tiger">National Animal</a>
+                  <a href="https://en.wikipedia.org/wiki/Vande_Mataram">National Song</a>
+                  <a href="https://en.wikipedia.org/wiki/Indian_rupee">Currency Symbol</a>
+                </div>
+              </div>
+
+              <!-- Third Sub Dropdown -->
+              <div class="dropdown">
+                <a href="#" class="dropdown-toggle" onclick="toggleSubDropdown('sub-dropdown-3')">Indian Culture</a>
+                <div id="sub-dropdown-3" class="sub-dropdown-content">
+                  <a href="https://indianculture.gov.in/intangible-cultural-heritage">Heritage</a>
+                  <a href="https://indianculture.gov.in/festivals-of-india">Festivals</a>
+                  <a href="https://indianculture.gov.in/painting-collections">Arts</a>
+                  <a href="https://geriatrics.stanford.edu/ethnomed/asian_indian/introduction/culture.html">Languages</a>
+                  <a href="https://ccrtindia.gov.in/resources/literary-arts/">Literature</a>
+                  <a href="https://indiacuisine.net">Cuisines</a>
+                  <a href="https://www.coa.gov.in/">Architecture</a>
+                  <a href="https://dst.gov.in/">Science and Technology</a>
+                </div>
+              </div>
+              <a href="./pages/quiz.html">Quiz</a>
+              <a href="./pages/helpcenter.html">Help Center</a>
+              <a href="./pages/aboutus.html">About Us</a>
+            </div>
+          </div>
+        </div>
+          
+          
+      <div style="height: 100px;"></div>
+
+        <div class="main">
+          <h1 class="india_heading">BHARAT</h1>
+          <br />
+          <h1 class="india_phrase">|| Janani Janmabhoomishcha Swargadapi Gareeyasee ||</h1>
+        </div>
+      </section>
+      <div style="height: 100px;"></div> <!-- Adjust the height as needed -->
+      <div class="recognization">
+        <div class="head">
+          UNESCO RECOGNIZED WORLD HERITAGE CENTERS IN INDIA
+        </div>
+      </div>
+      <div class="main_container2">
+        <button onclick="goPrev()" class="toggle">
+          <i class="fas fa-arrow-left"></i>
+        </button>
+        <div class="container2">
+          <!-- <span>toggle</span> -->
+        </div>
+        <button onclick="goNext()" class="toggle">
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+      <div style="height: 50px;"></div>
+      <div class="main_container4">
+      <section id="explore-india">
+        <center><h1 style="color: white;">INDIAN MAP</h1></center> 
+        <br><br>
+        <center>
+          <p><h4 style="color: white;">This map depicts cultural heritage, regional dances, dominated religions in particular state etc.<br> Click on any pointer to learn more about the place and to appreciate the diversity!</h4></p>
+        </center>
+        <br><br>
+        <center>
+          <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1AmzjdAhXzmvgAGKw-wJfdrCUShueMAo&ehbc=2E312F" width="640" height="480"></iframe>
+        </center>
+      </section>
+      </div>
+    </div>
+
+    
+
+    <footer style="color: white; text-align: center; padding: 20px; font-size: 14px;">
+      <p><b>&copy; 2024 Team Code_Crazers. All rights reserved.</b></p>
+    </footer>
+    
+    <script src="./js/index.js"></script>
+    <script>
+      const bodyTag = document.body;
+      const loaderContainer = document.getElementById('preloader_container');
+      const audio = document.getElementById('background-music');
+
+      window.onload = function () {
+        loaderContainer.style.opacity = '0';
+        loaderContainer.style.pointerEvents = 'none';
+        bodyTag.classList.replace('no_scroll_bar', 'scrollBarVisible');
+
+        // Attempt to play the audio
+        audio.play().catch(error => {
+          console.log('Autoplay was prevented:', error);
+        });
+      };
+    </script>
+  </body>
+</html>

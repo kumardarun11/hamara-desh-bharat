@@ -1,0 +1,217 @@
+/* General Page Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: #ff9933; /* Saffron color */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 5px solid #138808; /* Indian green border */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+.intro-image {
+    display: inline-block; /* Ensures the image behaves like a block element for centering */
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adding a subtle shadow for better aesthetics */
+}
+
+.image-container {
+    text-align: center; /* Centers the image horizontally */
+    margin-bottom: 20px;
+}
+
+.text-container {
+    padding: 0 20px;
+}
+
+section h2 {
+    color: #138808; /* Indian green */
+    border-bottom: 3px solid #ff9933; /* Saffron color */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+section p, section ul {
+    line-height: 1.8;
+    margin: 0;
+    padding: 0 20px;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 40px;
+    margin-top: 10px;
+}
+
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.column {
+    flex: 1;
+    min-width: 300px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.column-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.column h3 {
+    color: #003366; /* Dark blue for subheadings */
+    margin-bottom: 10px;
+}
+
+.image-text-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.side-image {
+    flex: 1;
+    max-width: 400px;
+    max-height: 250px; /* Adjusted max height to fit content better */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer Styles */
+footer {
+    background-color: rgba(19, 136, 8, 0.8); /* Indian green with 80% opacity */
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    position: relative;
+}
+
+/* Orange line above the footer bottom */
+footer:before {
+    content: '';
+    display: block;
+    height: 5px;
+    background-color: #ff9933; /* Saffron orange */
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* Footer Text */
+footer p {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+/* Footer Icons Styling */
+.footer-icons a {
+    font-size: 2.5em; /* Increased size */
+    color: #feffff;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.footer-icons a:hover {
+    color: #ddd;
+}
+
+.gmail { color: #EA4335; } /* Gmail Red */
+.twitter { color: #1DA1F2; } /* Twitter Blue */
+.whatsapp { color: #25D366; } /* WhatsApp Green */
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Contact Section */
+#about {
+    text-align: center;
+    padding: 20px;
+}
+
+#about p {
+    font-size: .1em;
+    line-height: 1.6;
+}
+
+/* CodeCraze Team Text Styling */
+.made-by {
+    font-size: 5.5em; /* Increased size for CODECRAZE team */
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: #FFD700; /* Optional: Gold color for emphasis */
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.made-by span {
+    font-size: 1.3em;
+    color: #fff; /* You can change this if needed */
+}

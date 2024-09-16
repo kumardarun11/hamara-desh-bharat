@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Heritage Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/da/Taj-Mahal.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        h1 {
+            color: #d2691e;
+            animation: fadeIn 2s ease-in;
+        }
+        .question {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .options li {
+            margin: 10px 0;
+        }
+        .options input {
+            margin-right: 10px;
+        }
+        .submit-btn {
+            background-color: #d2691e;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .submit-btn:hover {
+            background-color: #cd853f;
+        }
+        .result {
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #d2691e;
+        }
+        .logo {
+            width: 100px;
+            margin: 20px auto;
+            display: block;
+        }
+        .timer, .scoreboard {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            display: inline-block;
+            margin: 0 10px;
+        }
+        .home-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #d2691e;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1em;
+            transition: transform 0.3s ease;
+        }
+        .home-btn:hover {
+            background-color: #cd853f;
+            transform: scale(1.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+        .question {
+            animation: bounce 1s;
+        }
+    </style>
+</head>
+<body>
+    <audio id="bg-music" src="https://www.soundjay.com/misc/sounds/india-national-anthem.mp3" autoplay loop></audio>
+    <div class="container">
+            <a href="../index.html" class="home-btn">Home</a> <!-- Home Button -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_India.svg/1024px-Flag_of_India.svg.png" alt="Indian Flag" class="logo">
+        <h1>Indian Heritage and Culture Quiz</h1>
+        <div class="scoreboard">
+            <div id="timer" class="timer">Time Left: 00:00</div>
+            <div id="score">Score: 0</div>
+        </div>
+        <div id="quiz-container">
+            <div id="question-container">
+                <!-- Questions will be loaded here -->
+            </div>
+            <button class="submit-btn" onclick="submitQuiz()">Submit</button>
+            <div id="result" class="result"></div>
+        </div>
+    </div>
+
+    <script>
+        const quizData = [
+            { question: "Which is the classical dance form of Kerala?", options: ["Kathak", "Bharatanatyam", "Odissi", "Kathakali"], answer: "Kathakali" },
+            { question: "Which temple is known as the 'Black Pagoda'?", options: ["Sun Temple, Konark", "Meenakshi Temple", "Brihadeeswarar Temple", "Lotus Temple"], answer: "Sun Temple, Konark" },
+            { question: "Which is the largest river island in India?", options: ["Majuli", "Elephanta", "Divar", "Vypin"], answer: "Majuli" },
+            { question: "In which state is the Ajanta and Ellora caves located?", options: ["Maharashtra", "Karnataka", "Rajasthan", "Uttar Pradesh"], answer: "Maharashtra" },
+            { question: "Which festival is known as the 'Festival of Lights'?", options: ["Holi", "Diwali", "Eid", "Christmas"], answer: "Diwali" },
+            { question: "Which Indian city is known as the 'City of Palaces'?", options: ["Mumbai", "Kolkata", "Jaipur", "Mysore"], answer: "Mysore" },
+            { question: "The traditional Indian fabric 'Pashmina' is associated with which state?", options: ["Punjab", "Jammu & Kashmir", "Gujarat", "Tamil Nadu"], answer: "Jammu & Kashmir" },
+            { question: "Who is known as the 'Father of the Nation' in India?", options: ["Jawaharlal Nehru", "Subhas Chandra Bose", "Mahatma Gandhi", "Bhagat Singh"], answer: "Mahatma Gandhi" },
+            { question: "Which Indian festival is celebrated by flying kites?", options: ["Lohri", "Makar Sankranti", "Holi", "Dussehra"], answer: "Makar Sankranti" },
+            { question: "In which city is the famous Golden Temple located?", options: ["Delhi", "Amritsar", "Kolkata", "Jaipur"], answer: "Amritsar" },
+            { question: "The Kathak dance originated from which Indian state?", options: ["Uttar Pradesh", "Kerala", "Tamil Nadu", "Odisha"], answer: "Uttar Pradesh" },
+            { question: "Which monument is known as the 'Symbol of Love'?", options: ["Qutub Minar", "Taj Mahal", "Red Fort", "India Gate"], answer: "Taj Mahal" },
+            { question: "Which festival marks the beginning of the harvest season in Punjab?", options: ["Baisakhi", "Onam", "Pongal", "Makar Sankranti"], answer: "Baisakhi" },
+            { question: "What is the national animal of India?", options: ["Elephant", "Lion", "Tiger", "Peacock"], answer: "Tiger" },
+            { question: "Which Indian state is famous for the Sundarbans mangrove forest?", options: ["Gujarat", "West Bengal", "Maharashtra", "Tamil Nadu"], answer: "West Bengal" },
+            { question: "Which city is known as the 'Pink City'?", options: ["Udaipur", "Jodhpur", "Jaipur", "Varanasi"], answer: "Jaipur" },
+            { question: "The Bhimbetka rock shelters are located in which state?", options: ["Madhya Pradesh", "Rajasthan", "Bihar", "Uttar Pradesh"], answer: "Madhya Pradesh" },
+            { question: "Which Indian state is known for the tea gardens of Darjeeling?", options: ["Assam", "Sikkim", "West Bengal", "Meghalaya"], answer: "West Bengal" },
+            { question: "Which is the oldest living language in India?", options: ["Sanskrit", "Hindi", "Tamil", "Telugu"], answer: "Tamil" },
+            { question: "Which Indian festival is celebrated with bonfires and singing in Punjab?", options: ["Diwali", "Baisakhi", "Lohri", "Dussehra"], answer: "Lohri" },
+            { question: "In which state is the Sun Temple of Modhera located?", options: ["Rajasthan", "Gujarat", "Odisha", "Karnataka"], answer: "Gujarat" },
+            { question: "Which city is home to the famous Charminar?", options: ["Mumbai", "Hyderabad", "Chennai", "Kolkata"], answer: "Hyderabad" },
+            { question: "The dance form 'Bharatanatyam' originated in which state?", options: ["Kerala", "Andhra Pradesh", "Tamil Nadu", "Karnataka"], answer: "Tamil Nadu" },
+            { question: "Which river is known as the 'Ganga of the South'?", options: ["Godavari", "Krishna", "Cauvery", "Mahanadi"], answer: "Cauvery" },
+            { question: "Which Indian state is famous for the Bihu festival?", options: ["West Bengal", "Assam", "Kerala", "Punjab"], answer: "Assam" }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let timeLeft = 120; // 2 minutes timer
+
+        const timerElement = document.getElementById('timer');
+        const scoreElement = document.getElementById('score');
+        const questionContainer = document.getElementById('question-container');
+        const resultElement = document.getElementById('result');
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function loadQuestion() {
+            const currentQuestion = quizData[currentQuestionIndex];
+            questionContainer.innerHTML = `
+                <div class="question">${currentQuestion.question}</div>
+                <ul class="options">
+                    ${currentQuestion.options.map(option => `
+                        <li>
+                            <label>
+                                <input type="radio" name="quiz-option" value="${option}"> ${option}
+                            </label>
+                        </li>
+                    `).join('')}
+                </ul>
+            `;
+        }
+
+        function submitQuiz() {
+            const selectedOption = document.querySelector('input[name="quiz-option"]:checked');
+            if (selectedOption) {
+                const answer = selectedOption.value;
+                if (answer === quizData[currentQuestionIndex].answer) {
+                    score++;
+                    scoreElement.textContent = `Score: ${score}`;
+                }
+
+                currentQuestionIndex++;
+                if (currentQuestionIndex < quizData.length) {
+                    loadQuestion();
+                } else {
+                    showResult();
+                }
+            } else {
+                alert('Please select an answer before submitting.');
+            }
+            console.log(`Selected: ${answer}, Correct: ${quizData[currentQuestionIndex].answer}`);
+        }
+
+        function showResult() {
+            resultElement.textContent = `Quiz over! Your final score is ${score} out of ${quizData.length}.`;
+            questionContainer.innerHTML = ''; // Clear the questions
+            document.querySelector('.submit-btn').disabled = true; // Disable submit button after quiz is over
+        }
+
+        function startTimer() {
+            const timerInterval = setInterval(() => {
+                timeLeft--;
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                timerElement.textContent = `Time Left: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    showResult();
+                }
+            }, 1000);
+        }
+        shuffleArray(quizData);
+
+        loadQuestion();
+        startTimer();
+    </script>
+</body>
+</html>

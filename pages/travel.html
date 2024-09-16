@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel with Us</title>
+  <link rel="stylesheet" href="../styles/travel1.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="header-container">
+      <h1>Travel with Us</h1>
+      <p>Explore India's Heritage with Unforgettable Journeys</p>
+      <a href="#form-section" class="cta-button">Plan Your Trip</a>
+      <br><br>
+      <nav>
+        <ul>
+            
+            <li><a class=" button button-travel" href="transport.html">Travel</a></li>
+            <li><a class=" button button-hotels" href="hotels.html">Hotels</a></li>
+        </ul>
+    </nav>
+    </div>
+  </header>
+
+  <!-- Destinations Section -->
+  <section id="destinations">
+    <h2>Top Destinations</h2>
+    <div class="destination-cards">
+      <div class="card">
+        <img src="../images/taj Mahal.jpg" alt="Taj Mahal">
+        <h3>Taj Mahal, Agra</h3>
+        <p>Visit the epitome of love and architectural marvel.</p>
+      </div>
+      <div class="card">
+        <img src="../images/hampi.jpg" alt="Hampi">
+        <h3>Hampi, Karnataka</h3>
+        <p>Hampi, Karnataka. Hampi is a jewel of Karnataka, rich in history and serenit.</p>
+      </div>
+      <div class="card">
+        <img src="../images/jaipur.jpg" alt="Jaipur">
+        <h3>Hawa Mahal,Jaipur</h3>
+        <p>The Hawa Mahal symbolizes Rajasthan's rich heritage and the opulence of Rajput rulers</p>
+      </div>
+      <div class="card">
+        <img src="../images/Gujarat.jpg" alt="Gujarat">
+        <h3>Statue of Unity, Gujarat</h3>
+        <p>The statue symbolizes national harmony and integrity, inspiring future generations.</p>
+      </div>
+      <div class="card">
+        <img src="../images/odisha.avif" alt="odisha">
+        <h3> Shree Jagannath Puri temple,Odisha</h3>
+        <p>As a Char-Dham site, the shrine is vital to Hindu followers.</p>
+      </div>
+      <div class="card">
+        <img src="../images/Maharashtra.jpg" alt="Maharashtra">
+        <h3>Charminar, Maharashtra</h3>
+        <p>The Charminar is central to cultural celebrations like Eid-ul-Adha and Eid al-Fitr.</p>
+      </div>
+      <div class="card">
+        <img src="../images/uttrakhand.jpg" alt="Uttrakhand">
+        <h3>Kedarnath, Uttrakhand</h3>
+        <p>Kedarnath is part of the Chota Char Dham pilgrimage in Uttarakhand, a dream for many devout Hindus.</p>
+      </div>
+      <div class="card">
+        <img src="../images/Panjab.jpg" alt="Panjab">
+        <h3>Golden Temple, Punjab</h3>
+        <p>Amritsar's spiritual hub, the Sri Harmandir Sahib, is commonly known as the Golden Temple.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <section id="form-section">
+    <h2>Plan Your Trip</h2>
+    <form id="travelForm" onsubmit="validateForm(event)">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="destination">Select Destination</label>
+      <select id="destination" name="destination" required>
+        <option value="">-- Choose a Destination --</option>
+        <option value="Taj Mahal">Taj Mahal, Agra</option>
+        <option value="Hampi">Hampi, Karnataka</option>
+        <option value="Jaipur">Hawa Mahal,Jaipur</option>
+        <option value="Jaipur">Statue of Unity, Gujarat</option>
+        <option value="Jaipur">Shree Jagannath Puri temple,Odisha</option>
+        <option value="Jaipur">Charminar, Maharashtra</option>
+        <option value="Jaipur">Kedarnath, Uttrakhand</option>
+        <option value="Jaipur">Golden Temple, Punjab</option>
+        <option value="Jaipur">Palolem Beach, Goa</option>
+        <option value="Jaipur">Panoramic views, Sikkim</option>
+        <option value="Jaipur">mountains, lakes, Arunachal Pradesh</option>
+        <option value="Jaipur">Red Fort, Delhi</option>
+        <option value="Jaipur">Howrah Bridge, West Bengal</option>
+        <option value="Jaipur">Kamakhya Temple, Assam</option>
+      </select>
+
+      <label for="date">Preferred Travel Date</label>
+      <input type="date" id="date" name="date" required>
+
+      <button href="#button-travel" type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Travel with Us | Explore Indian Heritage</p>
+  </footer>
+
+  <script src="../js/travel.js"></script>
+  <script src="../js/form.js"></script>
+</body>
+</html>

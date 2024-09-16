@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Heritage Transport</title>
+    <link rel="stylesheet" href="../styles/transport.css">
+</head>
+<body>
+    <header>
+        <h1>Indian Heritage Transport</h1>
+       
+        <p>"India’s transport: where bullock carts meet bullet trains, blending heritage with innovation"</p>
+    </header>
+
+    <section class="form-section">
+        <h2>User Information</h2>
+        <form id="userForm" onsubmit="validateForm(event)">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter Your Full Name" required><br><br>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required><br><br>
+
+            <label for="transport">Select your preferred transport</label>
+            <select id="transport" name="transport" required>
+                <option value="">-- Choose a Transport --</option>
+                <option value="auto-rickshaw">Aeroplane</option>
+                <option value="cycle-rickshaw">Cruise Ship</option>
+                <option value="bullock-cart">Cars</option>
+                <option value="train">Train</option>
+                <option value="bus">Bus</option>
+            </select><br><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <section class="gallery-section">
+        <h2>Transport Options</h2>
+        <div class="gallery">
+            <div class="image-box">
+                <a href="https://www.airindia.in/" target="_blank">
+                    <img src="../images/plane.jpg" alt="Aeroplane">
+                    <p>Aeroplane</p>
+                </a>
+            </div>
+            <div class="image-box">
+                <a href="https://www.carnival.com/" target="_blank">
+                    <img src="../images/ship.avif" alt="Ship">
+                    <p>Cruise Ship</p>
+                </a>
+            </div>
+            <div class="image-box">
+                <a href="https://www.makemytrip.com/car-rental/" target="_blank">
+                    <img src="../images/car.jpg" alt="car">
+                    <p>Cars</p>
+                </a>
+            </div>
+            <div class="image-box">
+                <a href="https://www.indianrailways.gov.in/" target="_blank">
+                    <img src="../images/Train.jpg" alt="Train">
+                    <p>Train</p>
+                </a>
+            </div>
+            <div class="image-box">
+                <a href="https://www.redbus.in/" target="_blank">
+                    <img src="../images/Bus.jpg" alt="Bus">
+                    <p>Bus</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+
+    <footer>
+        <p>© 2024 Indian Heritage Transport. All rights reserved.</p>
+    </footer>
+
+    <script src="../js/transport.js"></script>
+</body>
+</html>

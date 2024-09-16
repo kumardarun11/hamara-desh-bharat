@@ -1,0 +1,126 @@
+/* General Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('https://img.freepik.com/free-vector/decorative-indian-flag-theme-independence-day-15th-august-tricolor-background_1055-18095.jpg?w=996&t=st=1726303695~exp=1726304295~hmac=104e1a09cfba3b3cd655dba8b8e2ad5fdd64e20ebab9dd39d1a105671298e75a'); /* Use your image URL */
+  background-repeat: no-repeat;
+  background-size: cover; /* Makes the image cover the entire background */
+  background-position: center; /* Centers the image */
+}
+
+
+.chatbot-container {
+  width: 100%;
+  max-width: 450px;
+  padding: 30px;
+  background-color: #50f183;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  background-image: url('https://cdn.pixabay.com/photo/2020/12/22/11/24/mandala-5849954_1280.png');
+  background-position: bottom right;
+  background-size: 120px;
+  background-repeat: no-repeat;
+  border: 3px solid #FF5733;
+}
+
+.chatbot-title {
+  font-size: 24px;
+  color: #2E4053;
+  font-family: 'Georgia', serif;
+  margin-bottom: 10px;
+}
+
+#greeting {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #4C4C6D;
+}
+
+.chatbot-select {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border: 2px solid #FF5733;
+  border-radius: 6px;
+  background-color: #fbf9f4;
+  transition: border 0.3s ease;
+}
+
+.chatbot-select:focus {
+  border-color: #FF5733;
+  background-color: #FFDDC1;
+}
+
+.chatbot-response {
+  font-size: 16px;
+  color: #2E4053;
+  background-color: #FFDDC1;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  display: none;
+  border: 1px solid #FF5733;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.chatbot-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #FF5733;
+  border-radius: 6px;
+  resize: none;
+  height: 120px;
+  margin-bottom: 20px;
+  background-color: #edf1ed;
+  transition: border 0.3s ease;
+}
+
+.chatbot-input:focus {
+  border-color: #FF5733;
+  background-color: #FFDDC1;
+}
+
+.chatbot-btn {
+  width: 100%;
+  max-width: 300px; /* Limit button width for better orientation */
+  padding: 12px;
+  background-color: #FF5733;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 15px; /* Ensures uniform margin */
+}
+
+.chatbot-btn:hover {
+  background-color: #C70039;
+}
+
+.chatbot-hope-message {
+  font-size: 14px;
+  color: #888;
+  margin-top: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

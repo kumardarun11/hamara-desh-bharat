@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center - Indian Heritage</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff; /* White background */
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: #ffb74d; /* Light orange */
+            padding: 20px;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            border-bottom: 4px solid #388e3c; /* Green border */
+        }
+
+        /* Search Section */
+        .search-container {
+            background-color: #f7f7f7;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .search-container h1 {
+            color: #ffb74d; /* Orange heading */
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .search-container input[type="text"] {
+            width: 60%;
+            padding: 15px;
+            font-size: 16px;
+            border: 2px solid #ffb74d; /* Orange border */
+            border-radius: 50px;
+            outline: none;
+        }
+
+        .search-container input[type="text"]:focus {
+            border-color: #388e3c; /* Green border on focus */
+        }
+
+        .search-container button {
+            padding: 15px 30px;
+            background-color: #388e3c; /* Green button */
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 50px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-container button:hover {
+            background-color: #2e7d32; /* Darker green on hover */
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-section h2 {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #388e3c; /* Green */
+        }
+
+        .faq {
+            padding: 20px;
+            background-color: #f1f8e9; /* Light green */
+            margin-bottom: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 2px solid #81c784; /* Light green border */
+            transition: background-color 0.3s ease;
+        }
+
+        .faq:hover {
+            background-color: #e0f2f1;
+        }
+
+        .faq-question {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffb74d; /* Orange */
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            font-size: 16px;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .faq.open .faq-answer {
+            max-height: 500px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-section h2 {
+            font-size: 28px;
+            text-align: center;
+            color: #ffb74d; /* Orange */
+            margin-bottom: 30px;
+        }
+
+        .contact-section form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-section input, .contact-section textarea {
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .contact-section button {
+            padding: 15px;
+            background-color: #388e3c; /* Green button */
+            color: white;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-section button:hover {
+            background-color: #2e7d32; /* Darker green on hover */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #388e3c; /* Green footer */
+            padding: 20px;
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+        }
+
+        footer p {
+            font-size: 16px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .search-container input[type="text"] {
+                width: 80%;
+            }
+        }
+
+        /* Image Section */
+        .image-section {
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Indian Heritage Help Center
+    </header>
+
+    <!-- Search Section -->
+    <div class="search-container">
+        <h1>How can we help you?</h1>
+        <input type="text" placeholder="Search for help...">
+        <button>Search</button>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq">
+            <div class="faq-question">How do I create an account?</div>
+            <div class="faq-answer">To create an account, click the "Sign Up" button on the homepage, fill in your details, and click submit.</div>
+        </div>
+
+        <div class="faq">
+            <div class="faq-question">What should I do if I forget my password?</div>
+            <div class="faq-answer">Click "Forgot Password" on the login page, enter your email address, and follow the instructions sent to your email.</div>
+        </div>
+
+        <div class="faq">
+            <div class="faq-question">How can I update my profile information?</div>
+            <div class="faq-answer">Go to your profile, click on "Edit Profile", and update your information as needed.</div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Code_Crazers. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        const faqs = document.querySelectorAll('.faq');
+        faqs.forEach(faq => {
+            faq.addEventListener('click', () => {
+                faq.classList.toggle('open');
+            });
+        });
+    </script>
+
+</body>
+</html>

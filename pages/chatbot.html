@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chatbot</title>
+  <link rel="stylesheet" href="../styles/chatbot.css">
+</head>
+<body>
+  <div class="chatbot-container">
+    <h1 class="chatbot-title">Namaste! How can I assist you?</h1>
+    <h3 id="greeting">Feel free to select a query below:</h3>
+    
+    <select id="options" class="chatbot-select">
+      <option value="">Select a query</option>
+      <option value="technical-issue">Report a Technical Issue</option>
+      <option value="quiz">Play a Quiz</option>
+      <option value="list-of-states">List of States with Links</option>
+      <option value="travel-with-us">Travel with Us</option>
+      <option value="other-query">Other Query</option>
+    </select>
+
+    <div id="response" class="chatbot-response"></div>
+
+    <textarea id="user-input" placeholder="Type your message..." class="chatbot-input"></textarea>
+    
+    <button id="submit-btn" class="chatbot-btn">Submit</button>
+    
+    <p id="hope-message" class="chatbot-hope-message">I hope I can assist you well!</p>
+  </div>
+
+  <script src="../js/chatbot.js"></script>
+</body>
+</html>
