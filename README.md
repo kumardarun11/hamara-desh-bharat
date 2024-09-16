@@ -23,6 +23,19 @@ Visit the website here: [Hamara Desh Bharat](https://kumardarun11.github.io/hama
 - Explore India's cultural diversity and heritage
 - Discover various aspects of India's festivals, history, and traditions
 - Responsive design for PC and laptop viewing
+- Explore detailed information on the culture, traditions, and heritage of various Indian states.
+- Contribute directly to preserving India’s cultural heritage and supplement limited government funding.
+- Collaborate on addressing issues related to historical site preservation and cultural heritage.
+- Get AI-driven support for inquiries, cultural information, and guidance.
+- Access troubleshooting guides, FAQs, and community forums for technical support.
+- Discover curated travel tips and destination highlights for unique cultural experiences.
+- Ensure the site is accessible to all users, including those with disabilities.
+
+
+
+
+
+
 
 ---
 
